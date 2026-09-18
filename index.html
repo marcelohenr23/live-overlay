@@ -13,8 +13,6 @@
       --neon-blue: #00d2ff;
       --neon-pink: #ff007f;
       --gold: #ffd700;
-      --silver: #a0aab8;
-      --bronze: #cd7f32;
     }
 
     * {
@@ -38,7 +36,7 @@
       overflow-x: hidden;
     }
 
-    /* BARRA ANIMADA DE AVISO (CALL TO ACTION) */
+    /* BARRA ANIMADA DE AVISO */
     .notice-ticker {
       width: 100%;
       max-width: 400px;
@@ -203,7 +201,7 @@
     .rank-card {
       background: rgba(10, 25, 50, 0.9);
       border-radius: 25px;
-      padding: 8px 12px;
+      padding: 6px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -219,6 +217,7 @@
     .badge {
       width: 32px;
       height: 32px;
+      min-width: 32px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -230,41 +229,49 @@
     .top-2 .badge { background: radial-gradient(circle, #d0d8e5, #606b7d); color: #000; }
     .top-3 .badge { background: radial-gradient(circle, #e69d60, #804a1d); color: #000; }
 
-    /* FOTO DE PERFIL E NOMES COM ANIMAÇÃO INFINITA */
+    /* LAYOUT DA FOTO E TEXTO SEM SOBREPOSIÇÃO */
     .user-container {
       display: flex;
       align-items: center;
       flex-grow: 1;
-      margin-left: 10px;
-      gap: 10px;
+      margin-left: 8px;
+      gap: 8px;
+      overflow: hidden;
     }
 
     .user-avatar {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
       border-radius: 50%;
-      border: 1px solid var(--neon-blue);
+      border: 1.5px solid var(--neon-blue);
       object-fit: cover;
-      background: #111;
+      background: rgba(0, 210, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .user-info {
       display: flex;
       flex-direction: column;
+      overflow: hidden;
     }
 
     /* ANIMAÇÃO INFINITA NOS NOMES (FADE IN/OUT) */
     .username {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 700;
       color: #fff;
-      display: block;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
       animation: piscarInfinita 2.5s ease-in-out infinite alternate;
     }
 
     @keyframes piscarInfinita {
       0% {
-        opacity: 0.3;
+        opacity: 0.4;
         text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
       }
       100% {
@@ -274,17 +281,18 @@
     }
 
     .subtext {
-      font-size: 0.7rem;
+      font-size: 0.68rem;
       color: #8da2c0;
     }
 
     .score {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 800;
-      padding: 4px 12px;
+      padding: 4px 10px;
       border-radius: 15px;
       background: rgba(3, 10, 25, 0.8);
       border: 1px solid var(--neon-blue);
+      white-space: nowrap;
     }
 
     .score-curtidas { color: var(--neon-blue); }
@@ -328,7 +336,7 @@
 </head>
 <body>
 
-  <!-- AVISO ANIMADO QUE DESLIZA -->
+  <!-- AVISO ANIMADO -->
   <div class="notice-ticker">
     <span class="notice-text">💬 CURTE A LIVE E MANDA PRESENTES PARA APARECER O TEU NOME E FOTO NO RANKING AO VIVO! 🎁</span>
   </div>
@@ -361,7 +369,7 @@
         <div class="rank-card top-1">
           <div class="badge">🥇</div>
           <div class="user-container">
-            <img src="https://via.placeholder.com/30" class="user-avatar" id="like-img-1" alt="Foto">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-1" alt="Avatar">
             <div class="user-info">
               <span class="username" id="like-name-1">Aguardando...</span>
               <span class="subtext">Maior Tapper</span>
@@ -373,7 +381,7 @@
         <div class="rank-card top-2">
           <div class="badge">🥈</div>
           <div class="user-container">
-            <img src="https://via.placeholder.com/30" class="user-avatar" id="like-img-2" alt="Foto">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-2" alt="Avatar">
             <div class="user-info">
               <span class="username" id="like-name-2">Aguardando...</span>
               <span class="subtext">Super Apoiador</span>
@@ -385,7 +393,7 @@
         <div class="rank-card top-3">
           <div class="badge">🥉</div>
           <div class="user-container">
-            <img src="https://via.placeholder.com/30" class="user-avatar" id="like-img-3" alt="Foto">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-3" alt="Avatar">
             <div class="user-info">
               <span class="username" id="like-name-3">Aguardando...</span>
               <span class="subtext">Apoiador Frequente</span>
@@ -407,7 +415,7 @@
         <div class="rank-card top-1">
           <div class="badge">👑</div>
           <div class="user-container">
-            <img src="https://via.placeholder.com/30" class="user-avatar" id="gift-img-1" alt="Foto">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-1" alt="Avatar">
             <div class="user-info">
               <span class="username" id="gift-name-1">Aguardando...</span>
               <span class="subtext">Rei da Live</span>
@@ -419,7 +427,7 @@
         <div class="rank-card top-2">
           <div class="badge">💎</div>
           <div class="user-container">
-            <img src="https://via.placeholder.com/30" class="user-avatar" id="gift-img-2" alt="Foto">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-2" alt="Avatar">
             <div class="user-info">
               <span class="username" id="gift-name-2">Aguardando...</span>
               <span class="subtext">Super Doador</span>
@@ -431,7 +439,7 @@
         <div class="rank-card top-3">
           <div class="badge">⭐</div>
           <div class="user-container">
-            <img src="https://via.placeholder.com/30" class="user-avatar" id="gift-img-3" alt="Foto">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-3" alt="Avatar">
             <div class="user-info">
               <span class="username" id="gift-name-3">Aguardando...</span>
               <span class="subtext">Doador VIP</span>
