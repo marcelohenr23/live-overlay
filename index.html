@@ -3,15 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Overlay Automático Live TikTok</title>
+  <title>Overlay Marcelo Status Live</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #0b0c10;
-      --card-bg: rgba(22, 27, 34, 0.85);
-      --pink-neon: #ff0050;
-      --cyan-neon: #00f2fe;
+      --bg-color: #030712;
+      --neon-blue: #00d2ff;
+      --neon-pink: #ff007f;
       --gold: #ffd700;
-      --silver: #c0c0c0;
+      --silver: #a0aab8;
       --bronze: #cd7f32;
     }
 
@@ -19,143 +21,280 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     }
 
     body {
       background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 50% 10%, rgba(0, 210, 255, 0.25), transparent 40%),
+        radial-gradient(circle at 50% 90%, rgba(0, 100, 255, 0.2), transparent 40%);
       color: #fff;
+      font-family: 'Rajdhani', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px 10px;
+      padding: 15px 10px;
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .header-title {
-      font-size: 1.4rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-align: center;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, var(--pink-neon), var(--cyan-neon));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
-    }
-
-    .main-container {
-      width: 100%;
-      max-width: 420px;
+    /* TOPO - LOGO MARCELO STATUS */
+    .top-header {
+      position: relative;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 15px;
+    }
+
+    .logo-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid var(--neon-blue);
+      box-shadow: 0 0 20px var(--neon-blue), inset 0 0 15px var(--neon-blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(3, 10, 25, 0.9);
+      position: relative;
+    }
+
+    .logo-m {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1;
+      background: linear-gradient(180deg, #ffffff 30%, #a0c8ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    }
+
+    .logo-text {
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: #fff;
+      margin-top: -5px;
+    }
+
+    .logo-sub {
+      font-size: 0.65rem;
+      letter-spacing: 3px;
+      color: var(--neon-blue);
+      font-weight: 700;
+    }
+
+    .resenha-tag {
+      position: absolute;
+      right: 10px;
+      top: 25px;
+      font-family: 'Permanent Marker', cursive;
+      color: var(--neon-blue);
+      font-size: 1.1rem;
+      transform: rotate(8deg);
+      text-shadow: 0 0 8px var(--neon-blue);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .crown-icon-bg {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+      font-size: 2.2rem;
+      color: rgba(0, 210, 255, 0.4);
+      transform: rotate(-15deg);
+      filter: drop-shadow(0 0 8px var(--neon-blue));
+    }
+
+    /* TITULO DESTAQUES DA LIVE */
+    .banner-title {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(5, 20, 45, 0.8);
+      border: 2px solid var(--neon-blue);
+      clip-path: polygon(8% 0%, 92% 0%, 100% 50%, 92% 100%, 8% 100%, 0% 50%);
+      padding: 8px 0;
+      text-align: center;
+      margin-bottom: 15px;
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+    }
+
+    .banner-title h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .banner-title span {
+      color: var(--neon-blue);
+      text-shadow: 0 0 8px var(--neon-blue);
+    }
+
+    /* CONTAINERS DAS SECÇÕES */
+    .main-container {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
 
     .section-box {
-      background: rgba(15, 15, 25, 0.6);
+      background: rgba(6, 15, 33, 0.85);
       border-radius: 16px;
-      padding: 15px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      padding: 12px;
+      border: 2px solid var(--neon-blue);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.3), inset 0 0 15px rgba(0, 210, 255, 0.1);
     }
 
-    .section-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 12px;
+    .section-header {
+      font-size: 1.2rem;
+      font-weight: 800;
+      font-style: italic;
+      text-transform: uppercase;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 8px;
-      text-transform: uppercase;
     }
 
-    .curtidas-title { color: var(--cyan-neon); }
-    .presentes-title { color: var(--pink-neon); }
+    .curtidas-header { color: var(--neon-blue); }
+    .presentes-header { color: var(--neon-blue); }
 
     .ranking-list {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .rank-card {
-      background: var(--card-bg);
-      border-radius: 12px;
-      padding: 12px 15px;
+      background: rgba(10, 25, 50, 0.9);
+      border-radius: 25px;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      animation: flutuar 3s ease-in-out infinite alternate;
+      border: 1.5 solid var(--neon-blue);
+      box-shadow: 0 0 8px rgba(0, 210, 255, 0.2);
     }
 
-    @keyframes flutuar {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-4px); }
+    .rank-card.top-1 {
+      border: 2px solid var(--gold);
+      box-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
     }
-
-    .top-1 { border-color: var(--gold); box-shadow: 0 0 12px rgba(255, 215, 0, 0.3); }
-    .top-2 { border-color: var(--silver); box-shadow: 0 0 10px rgba(192, 192, 192, 0.2); }
-    .top-3 { border-color: var(--bronze); box-shadow: 0 0 8px rgba(205, 127, 50, 0.2); }
 
     .badge {
-      font-size: 1.2rem;
-      font-weight: bold;
       width: 32px;
       height: 32px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.1);
+      font-size: 1.1rem;
     }
 
-    .top-1 .badge { background: rgba(255, 215, 0, 0.2); color: var(--gold); }
-    .top-2 .badge { background: rgba(192, 192, 192, 0.2); color: var(--silver); }
-    .top-3 .badge { background: rgba(205, 127, 50, 0.2); color: var(--bronze); }
+    .top-1 .badge { background: radial-gradient(circle, #ffe600, #b38f00); color: #000; }
+    .top-2 .badge { background: radial-gradient(circle, #d0d8e5, #606b7d); color: #000; }
+    .top-3 .badge { background: radial-gradient(circle, #e69d60, #804a1d); color: #000; }
 
     .user-info {
       flex-grow: 1;
-      margin-left: 12px;
+      margin-left: 10px;
     }
 
     .username {
       font-size: 0.95rem;
       font-weight: 700;
-      color: #ffffff;
+      color: #fff;
       display: block;
     }
 
     .subtext {
-      font-size: 0.75rem;
-      color: #8a8d93;
+      font-size: 0.7rem;
+      color: #8da2c0;
     }
 
     .score {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 800;
-      padding: 4px 10px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
+      padding: 4px 12px;
+      border-radius: 15px;
+      background: rgba(3, 10, 25, 0.8);
+      border: 1px solid var(--neon-blue);
     }
 
-    .score-curtidas { color: var(--cyan-neon); border: 1px solid rgba(0, 242, 254, 0.3); }
-    .score-presentes { color: var(--pink-neon); border: 1px solid rgba(255, 0, 80, 0.3); }
+    .score-curtidas { color: var(--neon-blue); }
+    .score-presentes { color: var(--neon-pink); border-color: var(--neon-pink); }
+
+    /* RODAPÉ MARCELO STATUS */
+    .footer-container {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .footer-brand {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 1.5rem;
+      color: var(--neon-blue);
+      text-shadow: 0 0 10px var(--neon-blue);
+      letter-spacing: 2px;
+    }
+
+    .footer-slogan {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #8da2c0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-slogan::before, .footer-slogan::after {
+      content: '';
+      width: 30px;
+      height: 2px;
+      background: var(--neon-blue);
+      box-shadow: 0 0 5px var(--neon-blue);
+    }
   </style>
 </head>
 <body>
 
-  <div class="header-title">🔥 Destaques da Live 🔥</div>
+  <!-- TOPO COM LOGO E RESENHA -->
+  <div class="top-header">
+    <div class="crown-icon-bg">👑</div>
+    <div class="logo-circle">
+      <div class="logo-m">M</div>
+      <div class="logo-text">MARCELO</div>
+      <div class="logo-sub">— STATUS —</div>
+    </div>
+    <div class="resenha-tag">AQUI É SÓ<br>RESENHA!</div>
+  </div>
+
+  <!-- BANNER DESTAQUES DA LIVE -->
+  <div class="banner-title">
+    <h1>🔥 DESTAQUES <span>DA LIVE</span> 🔥</h1>
+  </div>
 
   <div class="main-container">
 
     <!-- SECÇÃO TOP CURTIDAS (ZERADO) -->
     <div class="section-box">
-      <div class="section-title curtidas-title">
-        <span>⚡</span> Top Curtidas
+      <div class="section-header curtidas-header">
+        <span>⚡</span> TOP <span>CURTIDAS</span>
       </div>
       <div class="ranking-list">
         
@@ -191,8 +330,8 @@
 
     <!-- SECÇÃO TOP PRESENTEADORES (ZERADO) -->
     <div class="section-box">
-      <div class="section-title presentes-title">
-        <span>🎁</span> Top Presenteadores
+      <div class="section-header presentes-header">
+        <span>🎁</span> TOP <span>PRESENTEADORES</span>
       </div>
       <div class="ranking-list">
         
@@ -226,6 +365,12 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- RODAPÉ MARCELO STATUS -->
+  <div class="footer-container">
+    <div class="footer-brand">MARCELO STATUS</div>
+    <div class="footer-slogan">JUNTOS SOMOS MAIS FORTES</div>
   </div>
 
 </body>
