@@ -33,9 +33,38 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 15px 10px;
+      padding: 10px 10px 20px 10px;
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    /* BARRA ANIMADA DE AVISO (CALL TO ACTION) */
+    .notice-ticker {
+      width: 100%;
+      max-width: 400px;
+      background: rgba(255, 0, 127, 0.15);
+      border: 1px solid var(--neon-pink);
+      border-radius: 20px;
+      padding: 6px 12px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      white-space: nowrap;
+      box-shadow: 0 0 10px rgba(255, 0, 127, 0.3);
+    }
+
+    .notice-text {
+      display: inline-block;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      animation: ticker 12s linear infinite, piscarInfinita 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
     /* TOPO - LOGO MARCELO STATUS */
@@ -50,8 +79,8 @@
     }
 
     .logo-circle {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       border: 4px solid var(--neon-blue);
       box-shadow: 0 0 20px var(--neon-blue), inset 0 0 15px var(--neon-blue);
@@ -64,7 +93,7 @@
     }
 
     .logo-m {
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       font-weight: 800;
       line-height: 1;
       background: linear-gradient(180deg, #ffffff 30%, #a0c8ff 100%);
@@ -74,7 +103,7 @@
     }
 
     .logo-text {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 800;
       letter-spacing: 2px;
       color: #fff;
@@ -82,7 +111,7 @@
     }
 
     .logo-sub {
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       letter-spacing: 3px;
       color: var(--neon-blue);
       font-weight: 700;
@@ -91,10 +120,10 @@
     .resenha-tag {
       position: absolute;
       right: 10px;
-      top: 25px;
+      top: 20px;
       font-family: 'Permanent Marker', cursive;
       color: var(--neon-blue);
-      font-size: 1.1rem;
+      font-size: 1rem;
       transform: rotate(8deg);
       text-shadow: 0 0 8px var(--neon-blue);
       text-align: center;
@@ -105,13 +134,13 @@
       position: absolute;
       left: 15px;
       top: 15px;
-      font-size: 2.2rem;
+      font-size: 2rem;
       color: rgba(0, 210, 255, 0.4);
       transform: rotate(-15deg);
       filter: drop-shadow(0 0 8px var(--neon-blue));
     }
 
-    /* TITULO DESTAQUES DA LIVE */
+    /* BANNER DESTAQUES DA LIVE */
     .banner-title {
       width: 100%;
       max-width: 400px;
@@ -125,11 +154,10 @@
     }
 
     .banner-title h1 {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 800;
       font-style: italic;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     .banner-title span {
@@ -137,7 +165,7 @@
       text-shadow: 0 0 8px var(--neon-blue);
     }
 
-    /* CONTAINERS DAS SECÇÕES */
+    /* CONTAINERS E RANKING */
     .main-container {
       width: 100%;
       max-width: 400px;
@@ -151,11 +179,11 @@
       border-radius: 16px;
       padding: 12px;
       border: 2px solid var(--neon-blue);
-      box-shadow: 0 0 15px rgba(0, 210, 255, 0.3), inset 0 0 15px rgba(0, 210, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 210, 255, 0.3);
     }
 
     .section-header {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       font-weight: 800;
       font-style: italic;
       text-transform: uppercase;
@@ -163,10 +191,8 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      color: var(--neon-blue);
     }
-
-    .curtidas-header { color: var(--neon-blue); }
-    .presentes-header { color: var(--neon-blue); }
 
     .ranking-list {
       display: flex;
@@ -181,7 +207,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border: 1.5 solid var(--neon-blue);
+      border: 1.5px solid var(--neon-blue);
       box-shadow: 0 0 8px rgba(0, 210, 255, 0.2);
     }
 
@@ -204,16 +230,47 @@
     .top-2 .badge { background: radial-gradient(circle, #d0d8e5, #606b7d); color: #000; }
     .top-3 .badge { background: radial-gradient(circle, #e69d60, #804a1d); color: #000; }
 
-    .user-info {
+    /* FOTO DE PERFIL E NOMES COM ANIMAÇÃO INFINITA */
+    .user-container {
+      display: flex;
+      align-items: center;
       flex-grow: 1;
       margin-left: 10px;
+      gap: 10px;
     }
 
+    .user-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid var(--neon-blue);
+      object-fit: cover;
+      background: #111;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ANIMAÇÃO INFINITA NOS NOMES (FADE IN/OUT) */
     .username {
       font-size: 0.95rem;
       font-weight: 700;
       color: #fff;
       display: block;
+      animation: piscarInfinita 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes piscarInfinita {
+      0% {
+        opacity: 0.3;
+        text-shadow: 0 0 2px rgba(255, 255, 255, 0.2);
+      }
+      100% {
+        opacity: 1;
+        text-shadow: 0 0 8px var(--neon-blue);
+      }
     }
 
     .subtext {
@@ -233,47 +290,50 @@
     .score-curtidas { color: var(--neon-blue); }
     .score-presentes { color: var(--neon-pink); border-color: var(--neon-pink); }
 
-    /* RODAPÉ MARCELO STATUS */
+    /* RODAPÉ */
     .footer-container {
-      margin-top: 20px;
+      margin-top: 15px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
+      gap: 4px;
       width: 100%;
       max-width: 400px;
     }
 
     .footer-brand {
       font-family: 'Permanent Marker', cursive;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       color: var(--neon-blue);
       text-shadow: 0 0 10px var(--neon-blue);
-      letter-spacing: 2px;
     }
 
     .footer-slogan {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
       color: #8da2c0;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .footer-slogan::before, .footer-slogan::after {
       content: '';
-      width: 30px;
+      width: 25px;
       height: 2px;
       background: var(--neon-blue);
-      box-shadow: 0 0 5px var(--neon-blue);
     }
   </style>
 </head>
 <body>
 
-  <!-- TOPO COM LOGO E RESENHA -->
+  <!-- AVISO ANIMADO QUE DESLIZA -->
+  <div class="notice-ticker">
+    <span class="notice-text">💬 CURTE A LIVE E MANDA PRESENTES PARA APARECER O TEU NOME E FOTO NO RANKING AO VIVO! 🎁</span>
+  </div>
+
+  <!-- TOPO MARCELO STATUS -->
   <div class="top-header">
     <div class="crown-icon-bg">👑</div>
     <div class="logo-circle">
@@ -284,43 +344,52 @@
     <div class="resenha-tag">AQUI É SÓ<br>RESENHA!</div>
   </div>
 
-  <!-- BANNER DESTAQUES DA LIVE -->
+  <!-- BANNER DESTAQUES -->
   <div class="banner-title">
     <h1>🔥 DESTAQUES <span>DA LIVE</span> 🔥</h1>
   </div>
 
   <div class="main-container">
 
-    <!-- SECÇÃO TOP CURTIDAS (ZERADO) -->
+    <!-- TOP CURTIDAS -->
     <div class="section-box">
-      <div class="section-header curtidas-header">
+      <div class="section-header">
         <span>⚡</span> TOP <span>CURTIDAS</span>
       </div>
       <div class="ranking-list">
         
         <div class="rank-card top-1">
           <div class="badge">🥇</div>
-          <div class="user-info">
-            <span class="username" id="like-name-1">Aguardando...</span>
-            <span class="subtext">Maior Tapper</span>
+          <div class="user-container">
+            <img src="https://via.placeholder.com/30" class="user-avatar" id="like-img-1" alt="Foto">
+            <div class="user-info">
+              <span class="username" id="like-name-1">Aguardando...</span>
+              <span class="subtext">Maior Tapper</span>
+            </div>
           </div>
           <div class="score score-curtidas" id="like-score-1">❤️ 0</div>
         </div>
 
         <div class="rank-card top-2">
           <div class="badge">🥈</div>
-          <div class="user-info">
-            <span class="username" id="like-name-2">Aguardando...</span>
-            <span class="subtext">Super Apoiador</span>
+          <div class="user-container">
+            <img src="https://via.placeholder.com/30" class="user-avatar" id="like-img-2" alt="Foto">
+            <div class="user-info">
+              <span class="username" id="like-name-2">Aguardando...</span>
+              <span class="subtext">Super Apoiador</span>
+            </div>
           </div>
           <div class="score score-curtidas" id="like-score-2">❤️ 0</div>
         </div>
 
         <div class="rank-card top-3">
           <div class="badge">🥉</div>
-          <div class="user-info">
-            <span class="username" id="like-name-3">Aguardando...</span>
-            <span class="subtext">Apoiador Frequente</span>
+          <div class="user-container">
+            <img src="https://via.placeholder.com/30" class="user-avatar" id="like-img-3" alt="Foto">
+            <div class="user-info">
+              <span class="username" id="like-name-3">Aguardando...</span>
+              <span class="subtext">Apoiador Frequente</span>
+            </div>
           </div>
           <div class="score score-curtidas" id="like-score-3">❤️ 0</div>
         </div>
@@ -328,36 +397,45 @@
       </div>
     </div>
 
-    <!-- SECÇÃO TOP PRESENTEADORES (ZERADO) -->
+    <!-- TOP PRESENTEADORES -->
     <div class="section-box">
-      <div class="section-header presentes-header">
+      <div class="section-header">
         <span>🎁</span> TOP <span>PRESENTEADORES</span>
       </div>
       <div class="ranking-list">
         
         <div class="rank-card top-1">
           <div class="badge">👑</div>
-          <div class="user-info">
-            <span class="username" id="gift-name-1">Aguardando...</span>
-            <span class="subtext">Rei da Live</span>
+          <div class="user-container">
+            <img src="https://via.placeholder.com/30" class="user-avatar" id="gift-img-1" alt="Foto">
+            <div class="user-info">
+              <span class="username" id="gift-name-1">Aguardando...</span>
+              <span class="subtext">Rei da Live</span>
+            </div>
           </div>
           <div class="score score-presentes" id="gift-score-1">💎 0</div>
         </div>
 
         <div class="rank-card top-2">
           <div class="badge">💎</div>
-          <div class="user-info">
-            <span class="username" id="gift-name-2">Aguardando...</span>
-            <span class="subtext">Super Doador</span>
+          <div class="user-container">
+            <img src="https://via.placeholder.com/30" class="user-avatar" id="gift-img-2" alt="Foto">
+            <div class="user-info">
+              <span class="username" id="gift-name-2">Aguardando...</span>
+              <span class="subtext">Super Doador</span>
+            </div>
           </div>
           <div class="score score-presentes" id="gift-score-2">💎 0</div>
         </div>
 
         <div class="rank-card top-3">
           <div class="badge">⭐</div>
-          <div class="user-info">
-            <span class="username" id="gift-name-3">Aguardando...</span>
-            <span class="subtext">Doador VIP</span>
+          <div class="user-container">
+            <img src="https://via.placeholder.com/30" class="user-avatar" id="gift-img-3" alt="Foto">
+            <div class="user-info">
+              <span class="username" id="gift-name-3">Aguardando...</span>
+              <span class="subtext">Doador VIP</span>
+            </div>
           </div>
           <div class="score score-presentes" id="gift-score-3">💎 0</div>
         </div>
@@ -367,7 +445,7 @@
 
   </div>
 
-  <!-- RODAPÉ MARCELO STATUS -->
+  <!-- RODAPÉ -->
   <div class="footer-container">
     <div class="footer-brand">MARCELO STATUS</div>
     <div class="footer-slogan">JUNTOS SOMOS MAIS FORTES</div>
