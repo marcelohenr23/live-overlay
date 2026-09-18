@@ -3,85 +3,242 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ranking da Live</title>
+  <title>Overlay Profissional Live TikTok</title>
   <style>
-    body {
+    :root {
+      --bg-color: #0b0c10;
+      --card-bg: rgba(22, 27, 34, 0.85);
+      --pink-neon: #ff0050;
+      --cyan-neon: #00f2fe;
+      --gold: #ffd700;
+      --silver: #c0c0c0;
+      --bronze: #cd7f32;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
-      background-color: #0d0d11;
+      padding: 0;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
       color: #fff;
-      font-family: sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 20px 10px;
+      min-height: 100vh;
     }
 
-    h1 {
-      color: #00f2fe;
-      text-shadow: 0 0 10px #00f2fe;
-      font-size: 1.4rem;
+    .header-title {
+      font-size: 1.5rem;
+      font-weight: 800;
       text-transform: uppercase;
-      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 25px;
+      background: linear-gradient(90deg, var(--pink-neon), var(--cyan-neon));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
     }
 
-    .ranking-container {
+    .main-container {
       width: 100%;
-      max-width: 350px;
+      max-width: 420px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 25px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border: 2px solid #00f2fe;
-      padding: 12px;
+    .section-box {
+      background: rgba(15, 15, 25, 0.6);
+      border-radius: 16px;
+      padding: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .curtidas-title { color: var(--cyan-neon); }
+    .presentes-title { color: var(--pink-neon); }
+
+    .ranking-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .rank-card {
+      background: var(--card-bg);
       border-radius: 12px;
+      padding: 12px 15px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
-      animation: flutuar 2s ease-in-out infinite alternate;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+      animation: flutuar 3s ease-in-out infinite alternate;
     }
-
-    .top1 { border-color: #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); }
-    .top2 { border-color: #c0c0c0; box-shadow: 0 0 15px rgba(192, 192, 192, 0.4); }
-    .top3 { border-color: #cd7f32; box-shadow: 0 0 15px rgba(205, 127, 50, 0.4); }
-
-    .pos { font-size: 1.3rem; }
-    .nome { flex-grow: 1; margin-left: 10px; font-weight: bold; }
-    .pontos { color: #ff0050; font-weight: bold; text-shadow: 0 0 5px #ff0050; }
 
     @keyframes flutuar {
-      from { transform: translateY(0px); }
-      to { transform: translateY(-5px); }
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-4px); }
     }
+
+    /* Estilos das Posições */
+    .top-1 {
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    .top-2 {
+      border-color: var(--silver);
+      box-shadow: 0 0 12px rgba(192, 192, 192, 0.2);
+    }
+    .top-3 {
+      border-color: var(--bronze);
+      box-shadow: 0 0 10px rgba(205, 127, 50, 0.2);
+    }
+
+    .badge {
+      font-size: 1.2rem;
+      font-weight: bold;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .top-1 .badge { background: rgba(255, 215, 0, 0.2); color: var(--gold); }
+    .top-2 .badge { background: rgba(192, 192, 192, 0.2); color: var(--silver); }
+    .top-3 .badge { background: rgba(205, 127, 50, 0.2); color: var(--bronze); }
+
+    .user-info {
+      flex-grow: 1;
+      margin-left: 12px;
+    }
+
+    .username {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      display: block;
+    }
+
+    .subtext {
+      font-size: 0.75rem;
+      color: #8a8d93;
+    }
+
+    .score {
+      font-size: 0.95rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .score-curtidas { color: var(--cyan-neon); border: 1px solid rgba(0, 242, 254, 0.3); }
+    .score-presentes { color: var(--pink-neon); border: 1px solid rgba(255, 0, 80, 0.3); }
   </style>
 </head>
 <body>
 
-  <h1>🏆 TOP PRESENTES 🏆</h1>
+  <div class="header-title">🔥 Destaques da Live 🔥</div>
 
-  <div class="ranking-container">
-    <div class="card top1">
-      <span class="pos">🥇</span>
-      <span class="nome">Protetor_01</span>
-      <span class="pontos">🎁 2.500</span>
+  <div class="main-container">
+
+    <!-- SECÇÃO TOP CURTIDAS -->
+    <div class="section-box">
+      <div class="section-title curtidas-title">
+        <span>⚡</span> Top Curtidas
+      </div>
+      <div class="ranking-list">
+        
+        <div class="rank-card top-1">
+          <div class="badge">🥇</div>
+          <div class="user-info">
+            <span class="username">Top 1 em Curtidas</span>
+            <span class="subtext">Maior Tapper</span>
+          </div>
+          <div class="score score-curtidas">❤️ 15.4K</div>
+        </div>
+
+        <div class="rank-card top-2">
+          <div class="badge">🥈</div>
+          <div class="user-info">
+            <span class="username">Top 2 em Curtidas</span>
+            <span class="subtext">Super Apoiador</span>
+          </div>
+          <div class="score score-curtidas">❤️ 8.9K</div>
+        </div>
+
+        <div class="rank-card top-3">
+          <div class="badge">🥉</div>
+          <div class="user-info">
+            <span class="username">Top 3 em Curtidas</span>
+            <span class="subtext">Apoiador Frequente</span>
+          </div>
+          <div class="score score-curtidas">❤️ 4.2K</div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="card top2">
-      <span class="pos">🥈</span>
-      <span class="nome">Fã_Numero_1</span>
-      <span class="pontos">🎁 1.200</span>
+    <!-- SECÇÃO TOP PRESENTEADORES -->
+    <div class="section-box">
+      <div class="section-title presentes-title">
+        <span>🎁</span> Top Presenteadores
+      </div>
+      <div class="ranking-list">
+        
+        <div class="rank-card top-1">
+          <div class="badge">👑</div>
+          <div class="user-info">
+            <span class="username">Top 1 Presenteador</span>
+            <span class="subtext">Rei da Live</span>
+          </div>
+          <div class="score score-presentes">💎 5.200</div>
+        </div>
+
+        <div class="rank-card top-2">
+          <div class="badge">💎</div>
+          <div class="user-info">
+            <span class="username">Top 2 Presenteador</span>
+            <span class="subtext">Super Doador</span>
+          </div>
+          <div class="score score-presentes">💎 2.800</div>
+        </div>
+
+        <div class="rank-card top-3">
+          <div class="badge">⭐</div>
+          <div class="user-info">
+            <span class="username">Top 3 Presenteador</span>
+            <span class="subtext">Doador VIP</span>
+          </div>
+          <div class="score score-presentes">💎 1.100</div>
+        </div>
+
+      </div>
     </div>
 
-    <div class="card top3">
-      <span class="pos">🥉</span>
-      <span class="nome">Apoiador_X</span>
-      <span class="pontos">🎁 800</span>
-    </div>
   </div>
 
 </body>
-      </html>
-      
+</html>
