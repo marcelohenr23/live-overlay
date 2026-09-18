@@ -65,7 +65,7 @@
       100% { transform: translateX(-100%); }
     }
 
-    /* TOPO - LOGO MARCELO STATUS */
+    /* TOPO MARCELO STATUS */
     .top-header {
       position: relative;
       display: flex;
@@ -229,7 +229,7 @@
     .top-2 .badge { background: radial-gradient(circle, #d0d8e5, #606b7d); color: #000; }
     .top-3 .badge { background: radial-gradient(circle, #e69d60, #804a1d); color: #000; }
 
-    /* LAYOUT DA FOTO E TEXTO SEM SOBREPOSIÇÃO */
+    /* LAYOUT DA FOTO DE PERFIL REAL */
     .user-container {
       display: flex;
       align-items: center;
@@ -240,16 +240,13 @@
     }
 
     .user-avatar {
-      width: 32px;
-      height: 32px;
-      min-width: 32px;
+      width: 34px;
+      height: 34px;
+      min-width: 34px;
       border-radius: 50%;
       border: 1.5px solid var(--neon-blue);
       object-fit: cover;
       background: rgba(0, 210, 255, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .user-info {
@@ -258,7 +255,6 @@
       overflow: hidden;
     }
 
-    /* ANIMAÇÃO INFINITA NOS NOMES (FADE IN/OUT) */
     .username {
       font-size: 0.9rem;
       font-weight: 700;
@@ -336,7 +332,7 @@
 </head>
 <body>
 
-  <!-- AVISO ANIMADO -->
+  <!-- AVISO ANIMADO DA LIVE -->
   <div class="notice-ticker">
     <span class="notice-text">💬 CURTE A LIVE E MANDA PRESENTES PARA APARECER O TEU NOME E FOTO NO RANKING AO VIVO! 🎁</span>
   </div>
@@ -369,7 +365,7 @@
         <div class="rank-card top-1">
           <div class="badge">🥇</div>
           <div class="user-container">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-1" alt="Avatar">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-1" alt="Foto">
             <div class="user-info">
               <span class="username" id="like-name-1">Aguardando...</span>
               <span class="subtext">Maior Tapper</span>
@@ -381,7 +377,7 @@
         <div class="rank-card top-2">
           <div class="badge">🥈</div>
           <div class="user-container">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-2" alt="Avatar">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-2" alt="Foto">
             <div class="user-info">
               <span class="username" id="like-name-2">Aguardando...</span>
               <span class="subtext">Super Apoiador</span>
@@ -393,7 +389,7 @@
         <div class="rank-card top-3">
           <div class="badge">🥉</div>
           <div class="user-container">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-3" alt="Avatar">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2300d2ff'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="like-img-3" alt="Foto">
             <div class="user-info">
               <span class="username" id="like-name-3">Aguardando...</span>
               <span class="subtext">Apoiador Frequente</span>
@@ -415,7 +411,7 @@
         <div class="rank-card top-1">
           <div class="badge">👑</div>
           <div class="user-container">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-1" alt="Avatar">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-1" alt="Foto">
             <div class="user-info">
               <span class="username" id="gift-name-1">Aguardando...</span>
               <span class="subtext">Rei da Live</span>
@@ -427,7 +423,7 @@
         <div class="rank-card top-2">
           <div class="badge">💎</div>
           <div class="user-container">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-2" alt="Avatar">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-2" alt="Foto">
             <div class="user-info">
               <span class="username" id="gift-name-2">Aguardando...</span>
               <span class="subtext">Super Doador</span>
@@ -439,7 +435,7 @@
         <div class="rank-card top-3">
           <div class="badge">⭐</div>
           <div class="user-container">
-            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-3" alt="Avatar">
+            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff007f'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/></svg>" class="user-avatar" id="gift-img-3" alt="Foto">
             <div class="user-info">
               <span class="username" id="gift-name-3">Aguardando...</span>
               <span class="subtext">Doador VIP</span>
@@ -458,6 +454,29 @@
     <div class="footer-brand">MARCELO STATUS</div>
     <div class="footer-slogan">JUNTOS SOMOS MAIS FORTES</div>
   </div>
+
+  <!-- SCRIPT PARA ATUALIZAR AS FOTOS E DADOS DA LIVE EM TEMPO REAL -->
+  <script>
+    function atualizarCurtida(posicao, nome, pontuacao, urlFoto) {
+      if (posicao >= 1 && posicao <= 3) {
+        document.getElementById(`like-name-${posicao}`).innerText = nome;
+        document.getElementById(`like-score-${posicao}`).innerText = `❤️ ${pontuacao}`;
+        if (urlFoto) {
+          document.getElementById(`like-img-${posicao}`).src = urlFoto;
+        }
+      }
+    }
+
+    function atualizarPresente(posicao, nome, pontuacao, urlFoto) {
+      if (posicao >= 1 && posicao <= 3) {
+        document.getElementById(`gift-name-${posicao}`).innerText = nome;
+        document.getElementById(`gift-score-${posicao}`).innerText = `💎 ${pontuacao}`;
+        if (urlFoto) {
+          document.getElementById(`gift-img-${posicao}`).src = urlFoto;
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
