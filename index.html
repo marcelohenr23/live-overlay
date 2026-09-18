@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranking da Live</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background-color: #0d0d11;
+      color: #fff;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      color: #00f2fe;
+      text-shadow: 0 0 10px #00f2fe;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .ranking-container {
+      width: 100%;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 2px solid #00f2fe;
+      padding: 12px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+      animation: flutuar 2s ease-in-out infinite alternate;
+    }
+
+    .top1 { border-color: #ffd700; box-shadow: 0 0 15px rgba(255, 215, 0, 0.5); }
+    .top2 { border-color: #c0c0c0; box-shadow: 0 0 15px rgba(192, 192, 192, 0.4); }
+    .top3 { border-color: #cd7f32; box-shadow: 0 0 15px rgba(205, 127, 50, 0.4); }
+
+    .pos { font-size: 1.3rem; }
+    .nome { flex-grow: 1; margin-left: 10px; font-weight: bold; }
+    .pontos { color: #ff0050; font-weight: bold; text-shadow: 0 0 5px #ff0050; }
+
+    @keyframes flutuar {
+      from { transform: translateY(0px); }
+      to { transform: translateY(-5px); }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏆 TOP PRESENTES 🏆</h1>
+
+  <div class="ranking-container">
+    <div class="card top1">
+      <span class="pos">🥇</span>
+      <span class="nome">Protetor_01</span>
+      <span class="pontos">🎁 2.500</span>
+    </div>
+
+    <div class="card top2">
+      <span class="pos">🥈</span>
+      <span class="nome">Fã_Numero_1</span>
+      <span class="pontos">🎁 1.200</span>
+    </div>
+
+    <div class="card top3">
+      <span class="pos">🥉</span>
+      <span class="nome">Apoiador_X</span>
+      <span class="pontos">🎁 800</span>
+    </div>
+  </div>
+
+</body>
+      </html>
+      
